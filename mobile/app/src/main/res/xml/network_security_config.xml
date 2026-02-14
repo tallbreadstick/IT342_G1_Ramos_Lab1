@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext only to the emulator host used for local backend -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain>10.0.2.2</domain>
+    </domain-config>
+    <!-- Default: disallow cleartext for other hosts -->
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
