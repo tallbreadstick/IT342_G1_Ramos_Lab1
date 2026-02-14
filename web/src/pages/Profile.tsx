@@ -67,38 +67,38 @@ export default function Profile() {
             <div className="max-w-screen-2xl mx-auto p-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-8">profile</h1>
 
-                <div className="border-t border-gray-200 pt-6">
-                    <table className="w-full text-left max-w-2xl">
-                        <tbody className="divide-y divide-gray-200">
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500 w-48">user id</td>
-                                <td className="py-3 text-sm text-gray-900">{user.id}</td>
-                            </tr>
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500">username</td>
-                                <td className="py-3 text-sm text-gray-900">{user.username}</td>
-                            </tr>
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500">email</td>
-                                <td className="py-3 text-sm text-gray-900">{user.email}</td>
-                            </tr>
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500">joined</td>
-                                <td className="py-3 text-sm text-gray-900">
-                                    {new Date(user.dateJoined).toLocaleDateString()}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div className="content-card">
+                    <div className="border-t border-gray-200 pt-6">
+                        <table className="w-full text-left max-w-2xl">
+                            <tbody className="divide-y divide-gray-200">
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500 w-48">user id</td>
+                                    <td className="py-3 text-sm text-gray-900">{user.id}</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500">username</td>
+                                    <td className="py-3 text-sm text-gray-900">{user.username}</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500">email</td>
+                                    <td className="py-3 text-sm text-gray-900">{user.email}</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500">joined</td>
+                                    <td className="py-3 text-sm text-gray-900">{new Date(user.dateJoined).toLocaleDateString()}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                <div className="mt-8 flex gap-4">
-                    <button
-                        onClick={() => navigate('/dashboard')}
-                        className="px-4 py-2 text-sm bg-gray-900 text-white hover:bg-gray-800 transition"
-                    >
-                        dashboard
-                    </button>
+                    <div className="mt-8 flex gap-4">
+                        <button
+                            onClick={() => navigate('/dashboard')}
+                            className="px-4 py-2 text-sm bg-gray-900 text-white hover:bg-gray-800 transition"
+                        >
+                            dashboard
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

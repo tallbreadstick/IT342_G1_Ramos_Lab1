@@ -44,35 +44,35 @@ export default function Dashboard() {
         <div className="min-h-[calc(100vh-4rem)] bg-white">
             <div className="max-w-screen-2xl mx-auto p-8">
                 <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-1">
-                        {user?.username}
-                    </h1>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-1">{user?.username}</h1>
                     <p className="text-gray-600">{user?.email}</p>
                 </div>
 
-                <div className="border-t border-gray-200 pt-6">
-                    <table className="w-full text-left">
-                        <tbody className="divide-y divide-gray-200">
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500 w-48">user id</td>
-                                <td className="py-3 text-sm text-gray-900">{user?.id}</td>
-                            </tr>
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500">username</td>
-                                <td className="py-3 text-sm text-gray-900">{user?.username}</td>
-                            </tr>
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500">email</td>
-                                <td className="py-3 text-sm text-gray-900">{user?.email}</td>
-                            </tr>
-                            <tr>
-                                <td className="py-3 text-sm font-medium text-gray-500">joined</td>
-                                <td className="py-3 text-sm text-gray-900">
-                                    {user?.dateJoined ? new Date(user.dateJoined).toLocaleDateString() : 'n/a'}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div className="content-card">
+                    <div className="border-t border-gray-200 pt-6">
+                        <table className="w-full text-left">
+                            <tbody className="divide-y divide-gray-200">
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500 w-48">user id</td>
+                                    <td className="py-3 text-sm text-gray-900">{user?.id}</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500">username</td>
+                                    <td className="py-3 text-sm text-gray-900">{user?.username}</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500">email</td>
+                                    <td className="py-3 text-sm text-gray-900">{user?.email}</td>
+                                </tr>
+                                <tr>
+                                    <td className="py-3 text-sm font-medium text-gray-500">joined</td>
+                                    <td className="py-3 text-sm text-gray-900">
+                                        {user?.dateJoined ? new Date(user.dateJoined).toLocaleDateString() : 'n/a'}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>

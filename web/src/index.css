@@ -10,3 +10,107 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* Transferred from App.css: minimal black-and-white theme and utilities */
+:root{
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #444444;
+  --border: #e6e6e6;
+  --btn-bg: #000000;
+  --btn-bg-hover: #222222;
+}
+
+html,body,#root{
+  height:100%;
+}
+
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Containers */
+.min-h-[calc(100vh-4rem)]{min-height:calc(100vh - 4rem);} /* keep tailwind utility used throughout */
+.max-w-screen-2xl{max-width:1280px;margin:0 auto}
+
+/* Navbar */
+nav{background:var(--bg);border-bottom:1px solid var(--border)}
+/* site nav layout */
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 1rem}
+.site-nav .brand{font-weight:700;letter-spacing:0.02em}
+.site-nav .nav-links{display:flex;gap:1rem;align-items:center}
+.site-nav .nav-link{font-size:0.95rem;color:var(--muted);background:transparent;border:0}
+.site-nav .nav-link.active{color:var(--text);text-decoration:underline}
+nav a, nav button{color:var(--text);text-decoration:none;background:transparent;border:0}
+
+/* Typography */
+h1,h2,h3{color:var(--text);margin:0 0 .5rem}
+p{color:var(--muted);margin:0}
+
+/* Inputs */
+input[type="text"], input[type="password"], input[type="email"], textarea{
+  width:100%;
+  box-sizing:border-box;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  outline:none;
+  color:var(--text);
+  background:transparent;
+}
+input:focus, textarea:focus{border-color:var(--text);}
+
+/* Buttons (override some Tailwind utility classes) */
+.bg-gray-900{background:var(--btn-bg)!important;color:#fff!important}
+.hover\:bg-gray-800:hover{background:var(--btn-bg-hover)!important}
+.text-white{color:#fff!important}
+.text-gray-900{color:var(--text)!important}
+.text-gray-600{color:var(--muted)!important}
+.border-gray-300{border-color:var(--border)!important}
+.bg-white{background:var(--bg)!important}
+
+/* Form card */
+.w-full.max-w-md{margin:0 auto}
+.space-y-4 > * + *{margin-top:1rem}
+
+/* auth card */
+.auth-card{background:transparent;border:1px solid var(--border);padding:1.25rem;border-radius:10px}
+
+/* Page content card for larger content */
+.content-card{background:transparent;border:1px solid var(--border);padding:1.5rem;border-radius:10px}
+
+/* Responsive tweaks */
+@media (max-width: 768px){
+  .site-nav{padding:0.5rem 0.75rem}
+  .site-nav .brand{font-size:1rem}
+  .site-nav .nav-links{gap:0.5rem}
+  .w-full.max-w-md{padding:0 8px}
+  .auth-card, .content-card{padding:1rem;border-radius:8px}
+  .min-h-[calc(100vh-4rem)]{min-height:calc(100vh - 3.5rem)}
+}
+
+@media (max-width:420px){
+  .site-nav{flex-direction:column;align-items:flex-start;gap:0.5rem}
+  .site-nav .nav-links{width:100%;justify-content:flex-start;flex-wrap:wrap}
+}
+
+
+/* Error / success messages */
+.bg-red-50{background:#fff5f5!important}
+.border-red-300{border-color:#f3c2c2!important}
+.text-red-700{color:#9b1c1c!important}
+.bg-green-50{background:#f6fffa!important}
+.border-green-300{border-color:#b7f2d9!important}
+.text-green-700{color:#0b6b3a!important}
+
+/* Tables */
+table{border-collapse:collapse;width:100%}
+td{padding:.5rem 0}
+
+/* Small touches */
+.inline-block.animate-spin{border:2px solid var(--border);border-top-color:var(--text);border-radius:9999px}

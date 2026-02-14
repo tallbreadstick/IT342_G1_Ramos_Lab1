@@ -22,49 +22,32 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-white border-b border-gray-300">
-            <div className="max-w-screen-2xl mx-auto px-8">
-                <div className="flex justify-between items-center h-14">
-                    <Link to="/" className="text-lg font-bold text-gray-900">
-                        auth
-                    </Link>
+        <nav className="site-nav">
+            <div className="max-w-screen-2xl" style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+                <Link to="/" className="brand">
+                    auth
+                </Link>
 
-                    <div className="flex items-center gap-6">
-                        {authenticated ? (
-                            <>
-                                <Link
-                                    to="/dashboard"
-                                    className={`text-sm hover:underline ${isActive('/dashboard') ? 'underline' : ''
-                                        }`}
-                                >
-                                    dashboard
-                                </Link>
-                                <button
-                                    onClick={handleLogout}
-                                    className="text-sm hover:underline"
-                                >
-                                    logout
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <Link
-                                    to="/login"
-                                    className={`text-sm hover:underline ${isActive('/login') ? 'underline' : ''
-                                        }`}
-                                >
-                                    login
-                                </Link>
-                                <Link
-                                    to="/register"
-                                    className={`text-sm hover:underline ${isActive('/register') ? 'underline' : ''
-                                        }`}
-                                >
-                                    register
-                                </Link>
-                            </>
-                        )}
-                    </div>
+                <div className="nav-links">
+                    {authenticated ? (
+                        <>
+                            <Link to="/dashboard" className={`nav-link ${isActive('/dashboard') ? 'active' : ''}`}>
+                                dashboard
+                            </Link>
+                            <button onClick={handleLogout} className="nav-link">
+                                logout
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="/login" className={`nav-link ${isActive('/login') ? 'active' : ''}`}>
+                                login
+                            </Link>
+                            <Link to="/register" className={`nav-link ${isActive('/register') ? 'active' : ''}`}>
+                                register
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </nav>
